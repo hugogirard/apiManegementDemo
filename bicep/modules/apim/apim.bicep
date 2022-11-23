@@ -9,8 +9,11 @@ param suffix string
 resource pip 'Microsoft.Network/publicIPAddresses@2020-07-01' = {
   name: 'pip-apim-${suffix}'
   location: location
+  sku: {
+    name: 'Standard'
+  }
   properties: {
-    publicIPAllocationMethod: 'Dynamic'
+    publicIPAllocationMethod: 'Dynamic'    
   }
 }
 
