@@ -17,7 +17,7 @@ resource pip 'Microsoft.Network/publicIPAddresses@2020-07-01' = {
   }
 }
 
-resource apimName_resource 'Microsoft.ApiManagement/service@2021-01-01-preview' = {
+resource apim 'Microsoft.ApiManagement/service@2021-01-01-preview' = {
   name: 'apim-${suffix}'
   location: location
   sku:{
