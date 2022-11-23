@@ -23,7 +23,8 @@
                   }                   
                 ]
               },
-              "spoke": {                
+              "spoke": {     
+                "name": "vnet-apim-spoke",
                 "addressPrefixe": "10.1.0.0/16",
                 "subnets": [
                   {

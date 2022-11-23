@@ -137,7 +137,7 @@ resource appGatewayNSG 'Microsoft.Network/networkSecurityGroups@2020-06-01' = {
 }
 
 resource vnet 'Microsoft.Network/virtualNetworks@2020-06-01' = {
-  name: 'vnet-spoke-apim'
+  name: vnetConfiguration.spoke.name
   location: location
   properties: {
       addressSpace: {

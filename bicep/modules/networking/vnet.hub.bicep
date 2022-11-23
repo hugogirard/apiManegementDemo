@@ -3,7 +3,7 @@ param location string
 
 
 resource vnet 'Microsoft.Network/virtualNetworks@2021-05-01' = {
-  name: vnetConfiguration.name
+  name: vnetConfiguration.hub.name
   location: location
   properties: {
     addressSpace: {
