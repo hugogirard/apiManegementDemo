@@ -15,6 +15,7 @@ resource pip 'Microsoft.Network/publicIPAddresses@2020-07-01' = {
   properties: {
     publicIPAllocationMethod: 'Static'  
     dnsSettings: {
+      domainNameLabel: 'apim-${suffix}'
       fqdn: 'apim-${suffix}.azure-api.net'
     }  
   }
