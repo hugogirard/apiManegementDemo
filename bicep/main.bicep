@@ -12,6 +12,8 @@ param resourceGroupNameHub string
 @description('The configuration of all virtual networks')
 param vnetConfiguration object
 
+var spokeSuffix = uniqueString(spokeRg.id)
+
 resource hubRg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
   name: resourceGroupNameHub
   location: location
@@ -37,5 +39,14 @@ module vnetSpoke 'modules/networking/vnet.spoke.bicep' = {
   params: {
     location: location
     vnetConfiguration: vnetConfiguration    
+  }
+}
+
+module apim 'modules/apim/apim.bicep' = {
+  scope: resourceGroup(spokeRg.name)
+  name: 'apim'
+  params: {
+    location: location 
+    suffix: spokeSuffix
   }
 }
