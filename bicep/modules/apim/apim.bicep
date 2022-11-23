@@ -13,7 +13,10 @@ resource pip 'Microsoft.Network/publicIPAddresses@2020-07-01' = {
     name: 'Standard'
   }
   properties: {
-    publicIPAllocationMethod: 'Static'    
+    publicIPAllocationMethod: 'Static'  
+    dnsSettings: {
+      fqdn: 'apim-${suffix}.azure-api.net'
+    }  
   }
 }
 
