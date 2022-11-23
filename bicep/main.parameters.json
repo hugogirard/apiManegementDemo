@@ -1,0 +1,42 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "eastus"
+        },
+        "resourceGroupNameHub": {
+            "value": "rg-spoke-hub"        
+        },        
+        "resourceGroupNameSpoke": {
+            "value": "rg-spoke-apim"        
+        },
+        "vnetConfiguration": {
+            "value": {
+              "hub": {
+                "name": "vnet-hub",
+                "addressPrefixe": "10.0.0.0/16",
+                "subnets": [
+                  {
+                    "name": "AzureFirewallSubnet",                    
+                    "addressPrefix": "10.0.1.0/24"                    
+                  }                   
+                ]
+              },
+              "spoke": {                
+                "addressPrefixe": "10.1.0.0/16",
+                "subnets": [
+                  {
+                    "name": "snet-appgw",
+                    "addressPrefix": "10.1.2.0/24"  
+                  },
+                  {
+                    "name": "snet-apim",
+                    "addressPrefix": "10.1.2.0/24"                    
+                  }                  
+                ]
+              }
+            }
+        }
+    }
+}
