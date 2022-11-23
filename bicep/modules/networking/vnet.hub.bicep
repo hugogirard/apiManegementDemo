@@ -13,9 +13,9 @@ resource vnet 'Microsoft.Network/virtualNetworks@2021-05-01' = {
     }
     subnets: [
       {
-        name: vnetConfiguration.subnets[0].name
+        name: vnetConfiguration.hub.subnets[0].name
         properties: {
-          addressPrefix: vnetConfiguration.subnets[0].addressPrefix
+          addressPrefix: vnetConfiguration.hub.subnets[0].addressPrefix
         }
       }                  
     ]
