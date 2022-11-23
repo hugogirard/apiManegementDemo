@@ -1,10 +1,10 @@
 param location string
 param suffix string
-// param apimSubnetId string
-// @secure()
-// param publisherEmail string
-// @secure()
-// param publisherName string
+param apimSubnetId string
+@secure()
+param publisherEmail string
+@secure()
+param publisherName string
 
 resource pip 'Microsoft.Network/publicIPAddresses@2020-07-01' = {
   name: 'pip-apim-${suffix}'
@@ -17,19 +17,20 @@ resource pip 'Microsoft.Network/publicIPAddresses@2020-07-01' = {
   }
 }
 
-// resource apimName_resource 'Microsoft.ApiManagement/service@2020-12-01' = {
-//   name: 'apim-${suffix}'
-//   location: location
-//   sku:{
-//     capacity: 1
-//     name: 'Developer'
-//   }
-//   properties:{    
-//     virtualNetworkType: 'Internal'
-//     publisherEmail: publisherEmail
-//     publisherName: publisherName
-//     virtualNetworkConfiguration: {
-//       subnetResourceId: apimSubnetId
-//     }
-//   }
-// }
+resource apimName_resource 'Microsoft.ApiManagement/service@2021-01-01-preview' = {
+  name: 'apim-${suffix}'
+  location: location
+  sku:{
+    capacity: 1
+    name: 'Developer'
+  }
+  properties:{    
+    virtualNetworkType: 'External'
+    publisherEmail: publisherEmail
+    publisherName: publisherName
+    virtualNetworkConfiguration: {
+      subnetResourceId: apimSubnetId
+    }
+    publicIpAddressId: pip.id
+  }
+}
