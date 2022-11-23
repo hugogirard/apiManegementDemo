@@ -149,7 +149,7 @@ resource vnet 'Microsoft.Network/virtualNetworks@2020-06-01' = {
           {
               name: 'snet-appgw'
               properties: {
-                  addressPrefix: vnetConfiguration.spoke.subnets[1].addressPrefix
+                  addressPrefix: vnetConfiguration.spoke.subnets[0].addressPrefix
                   networkSecurityGroup: {
                      id: appGatewayNSG.id
                   }
@@ -158,7 +158,7 @@ resource vnet 'Microsoft.Network/virtualNetworks@2020-06-01' = {
           {
               name: 'snet-apim'
               properties: {
-                  addressPrefix: vnetConfiguration.spoke.subnets[2].addressPrefix
+                  addressPrefix: vnetConfiguration.spoke.subnets[1].addressPrefix
                   networkSecurityGroup: {
                     id: nsgApim.id
                  }                  
