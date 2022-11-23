@@ -8,7 +8,7 @@ resource vnet 'Microsoft.Network/virtualNetworks@2021-05-01' = {
   properties: {
     addressSpace: {
       addressPrefixes: [
-        vnetConfiguration.hub.addressPrefixe
+        vnetConfiguration.hub.addressPrefix
       ]
     }
     subnets: [
