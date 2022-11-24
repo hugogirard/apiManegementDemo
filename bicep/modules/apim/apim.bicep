@@ -1,6 +1,7 @@
 param location string
 param suffix string
 param apimSubnetId string
+
 @secure()
 param publisherEmail string
 @secure()
@@ -24,6 +25,9 @@ resource pip 'Microsoft.Network/publicIPAddresses@2020-07-01' = {
 resource apim 'Microsoft.ApiManagement/service@2021-01-01-preview' = {
   name: 'apim-${suffix}'
   location: location
+  identity: {
+    type: 'SystemAssigned'
+  }
   sku:{
     capacity: 1
     name: 'Developer'
@@ -38,3 +42,5 @@ resource apim 'Microsoft.ApiManagement/service@2021-01-01-preview' = {
     publicIpAddressId: pip.id
   }
 }
+
+output apimIdentityId string = apim.identity.principalId

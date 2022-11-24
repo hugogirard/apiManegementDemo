@@ -59,3 +59,12 @@ module apim 'modules/apim/apim.bicep' = {
     publisherName: publisherName
   }
 }
+
+module kv 'modules/vault/keyvault.bicep' = {
+  scope: resourceGroup(spokeRg.name)
+  name: 'kv'
+  params: {
+    location: location
+    suffix: spokeSuffix
+  }
+}
