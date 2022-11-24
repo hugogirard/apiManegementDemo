@@ -44,3 +44,4 @@ resource apim 'Microsoft.ApiManagement/service@2021-01-01-preview' = {
 }
 
 output apimIdentityId string = apim.identity.principalId
+output apimName string = apim.name

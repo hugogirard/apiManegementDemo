@@ -68,3 +68,6 @@ module kv 'modules/vault/keyvault.bicep' = {
     suffix: spokeSuffix
   }
 }
+
+output apimName string = apim.outputs.apimName
+output spokeRgName string = spokeRg.name
