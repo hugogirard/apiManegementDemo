@@ -47,7 +47,7 @@ jobs:
       - name: Disable chain validation Azure APIM
         run: |
           $context = New-AzApiManagementContext -resourcegroup ${{ steps.createResource.outputs.spokeRgName }} -servicename ${{ steps.createResource.outputs.apimName }}
-        shell: powershell
+        shell: pwsh
                     
 
                         
