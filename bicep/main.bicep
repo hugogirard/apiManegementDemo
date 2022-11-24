@@ -66,6 +66,7 @@ module kv 'modules/vault/keyvault.bicep' = {
   params: {
     location: location
     suffix: spokeSuffix
+    apimPrincipalObjecId: apim.outputs.apimIdentityId
   }
 }
 
