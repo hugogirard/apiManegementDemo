@@ -29,8 +29,7 @@ jobs:
       - name: Azure Login
         uses: Azure/login@v1
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-          enable-AzPSSession: true 
+          creds: ${{ secrets.AZURE_CREDENTIALS }}          
 
       - name: deploy
         id: createResources
@@ -46,6 +45,7 @@ jobs:
         # https://learn.microsoft.com/en-us/azure/api-management/api-management-howto-mutual-certificates#self-signed-certificates
       - name: Disable chain validation Azure APIM
         run: |
+          Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force
           $context = New-AzApiManagementContext -resourcegroup ${{ steps.createResource.outputs.spokeRgName }} -servicename ${{ steps.createResource.outputs.apimName }}
         shell: pwsh
                     
