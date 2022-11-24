@@ -30,6 +30,7 @@ jobs:
         uses: Azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
+          enable-AzPSSession: true 
 
       - name: deploy
         id: createResources
@@ -46,7 +47,7 @@ jobs:
       - name: Disable chain validation Azure APIM
         run: |
           $context = New-AzApiManagementContext -resourcegroup ${{ steps.createResource.outputs.spokeRgName }} -servicename ${{ steps.createResource.outputs.apimName }}
-        shell: pwsh
+        shell: powershell
                     
 
                         
