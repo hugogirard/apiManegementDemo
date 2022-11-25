@@ -29,7 +29,7 @@ resource apim 'Microsoft.ApiManagement/service@2021-01-01-preview' = {
     type: 'SystemAssigned'
   }
   sku:{
-    capacity: 1
+    capacity: 0
     name: 'Consumption'
   }
   properties:{        
