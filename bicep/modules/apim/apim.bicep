@@ -23,7 +23,7 @@ resource pip 'Microsoft.Network/publicIPAddresses@2020-07-01' = {
 }
 
 resource apim 'Microsoft.ApiManagement/service@2021-01-01-preview' = {
-  name: 'apim-${suffix}'
+  name: 'api-gt-${suffix}'
   location: location
   identity: {
     type: 'SystemAssigned'
@@ -34,7 +34,7 @@ resource apim 'Microsoft.ApiManagement/service@2021-01-01-preview' = {
   }
   properties:{        
     publisherEmail: publisherEmail
-    publisherName: publisherName
+    publisherName: publisherName    
   }
 }
 
