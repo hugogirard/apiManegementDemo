@@ -43,11 +43,11 @@ jobs:
           parameters: ./bicep/main.parameters.json publisherEmail=${{ secrets.PUBLISHER_EMAIL }} publisherName=${{ secrets.PUBLISHER_NAME }}
 
         # https://learn.microsoft.com/en-us/azure/api-management/api-management-howto-mutual-certificates#self-signed-certificates
-      - name: Disable chain validation Azure APIM
-        run: |
-          Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force
-          $context = New-AzApiManagementContext -resourcegroup ${{ steps.createResources.outputs.spokeRgName }} -servicename ${{ steps.createResources.outputs.apimName }}
-        shell: pwsh
+      # - name: Disable chain validation Azure APIM
+      #   run: |
+      #     Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force
+      #     $context = New-AzApiManagementContext -resourcegroup ${{ steps.createResources.outputs.spokeRgName }} -servicename ${{ steps.createResources.outputs.apimName }}
+      #   shell: pwsh
                     
 
                         
