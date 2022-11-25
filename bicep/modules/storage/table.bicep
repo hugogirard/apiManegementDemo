@@ -14,16 +14,16 @@ resource storageAccountDocument 'Microsoft.Storage/storageAccounts@2021-04-01' =
   }
 }
 
-resource lookupService 'Microsoft.Storage/storageAccounts/tableServices@2022-05-01' = {
-  name: 'default'
-  parent: storageAccountDocument
-  properties: {
-  }
-}
+// resource lookupService 'Microsoft.Storage/storageAccounts/tableServices@2022-05-01' = {
+//   name: 'default'
+//   parent: storageAccountDocument
+//   properties: {
+//   }
+// }
 
-resource lookupTable 'Microsoft.Storage/storageAccounts/tableServices/tables@2022-05-01' = {
-  name: 'lookup'
-  parent: lookup
-  properties: {
-  }
-}
+// resource lookupTable 'Microsoft.Storage/storageAccounts/tableServices/tables@2022-05-01' = {
+//   name: 'lookup'
+//   parent: lookup
+//   properties: {
+//   }
+// }
