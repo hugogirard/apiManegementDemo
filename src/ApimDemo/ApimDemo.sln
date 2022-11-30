@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console", "Console", "{DD6567AE-86BC-418F-8A99-2ACF7B1245C1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "daemon", "..\daemon\daemon.csproj", "{10DEC5CC-35BE-44D4-8377-CA0449ACDE24}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10DEC5CC-35BE-44D4-8377-CA0449ACDE24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10DEC5CC-35BE-44D4-8377-CA0449ACDE24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10DEC5CC-35BE-44D4-8377-CA0449ACDE24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10DEC5CC-35BE-44D4-8377-CA0449ACDE24}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{10DEC5CC-35BE-44D4-8377-CA0449ACDE24} = {DD6567AE-86BC-418F-8A99-2ACF7B1245C1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C71FBC72-68B5-43B3-859C-8B6B6DF949C5}
+	EndGlobalSection
+EndGlobal

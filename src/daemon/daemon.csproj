@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>7bb62f91-fee6-42ff-836d-31209bf368ad</UserSecretsId>
+  </PropertyGroup>
+
+ <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.1" />
+  </ItemGroup>
+
+ <ItemGroup>
+   <None Update="appsettings.json">
+     <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+   </None>
+ </ItemGroup>
+
+</Project>

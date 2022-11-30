@@ -6,3 +6,4 @@ https://www.c-sharpcorner.com/article/using-certificates-for-api-authentication-
 
 https://techcommunity.microsoft.com/t5/fasttrack-for-azure/using-certificates-in-azure-api-management/ba-p/2888447
 
+https://aztoso.com/apim/client-certificates-authentication/
